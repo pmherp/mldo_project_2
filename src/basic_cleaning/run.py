@@ -38,8 +38,8 @@ def go(args):
     raw_data['last_review'] = pd.to_datetime(raw_data['last_review'])
 
     #fix for sample2.csv longitude
-    idx = df['longitude'].between(-74.25, -73.50) & df['latitude'].between(40.5, 41.2)
-    df = df[idx].copy()
+    idx = raw_data['longitude'].between(-74.25, -73.50) & raw_data['latitude'].between(40.5, 41.2)
+    raw_data = raw_data[idx].copy()
 
     logger.info(f'Saving preprocessed data: {args.output_artifact}')
     raw_data.to_csv(args.output_artifact, index=False)
