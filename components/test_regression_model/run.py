@@ -8,6 +8,7 @@ import wandb
 import mlflow
 import pandas as pd
 from sklearn.metrics import mean_absolute_error
+from sklearn.preprocessing import OrdinalEncoder, OneHotEncoder, FunctionTransformer
 
 from wandb_utils.log_artifact import log_artifact
 
